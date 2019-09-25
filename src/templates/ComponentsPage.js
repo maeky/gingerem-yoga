@@ -15,13 +15,13 @@ export const ComponentsPageTemplate = ({
   subtitle,
   featuredImage,
   section1,
+  gallery,
   section2,
   video,
   videoPoster,
   videoTitle,
   accordion,
-  body,
-  gallery
+  body
 }) => (
   <main>
     <PageHeader
