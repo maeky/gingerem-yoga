@@ -18,6 +18,10 @@ section1: >-
   vel est ut proin dis auctor. Suscipit sceler isque orci magna interdum vel
   bibendum duis netus a consectetur dui magnis ac aliquet sem posuere tincidunt
   vestibulum.
+
+
+  ![](https://ucarecdn.com/3adac79d-9671-4dc5-a863-fb16e0c2f231/ "Strongyogi
+  Studio")
 section2: |-
   ## You can use videos, images and text.
 
