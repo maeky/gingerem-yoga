@@ -9,7 +9,7 @@ import _kebabCase from 'lodash/kebabCase'
 import './Gallery.css'
 import 'react-photoswipe/lib/photoswipe.css'
 
-export const query = graphql`
+export const imageQuery = graphql`
   fragment Gallery on MarkdownRemark {
     frontmatter {
       gallery {

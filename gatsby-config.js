@@ -112,7 +112,9 @@ module.exports = {
         postCssPlugins: [
           require(`postcss-preset-env`)({
             browsers: '> 0.5%, last 2 versions, ie 11'
-          })
+          }),
+          require('tailwindcss'),
+          require('autoprefixer')
         ]
       }
     },

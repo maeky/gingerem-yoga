@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Location } from '@reach/router'
 import { Link } from 'gatsby'
 import { Menu, X } from 'react-feather'
-import Logo from './Logo'
+//import Logo from './Logo'
 
 import './Nav.css'
 
@@ -28,7 +28,7 @@ export class Navigation extends Component {
 
   render() {
     const { active } = this.state,
-      { subNav } = this.props,
+      //{ subNav } = this.props,
       NavLink = ({ to, className, children, ...props }) => (
         <Link
           to={to}
@@ -45,13 +45,13 @@ export class Navigation extends Component {
     return (
       <nav className={`Nav ${active ? 'Nav-active' : ''}`}>
         <div className="Nav--Container container">
-          <Link to="/" onClick={this.handleLinkClick}>
+          {/* <Link to="/" onClick={this.handleLinkClick}>
             <Logo />
-          </Link>
+          </Link> */}
           <div className="Nav--Links">
-            <NavLink to="/">Home</NavLink>
-            <NavLink to="/components/">Components</NavLink>
-            <div
+            <NavLink to="/">STRONG YOGI STUDIO</NavLink>
+            <NavLink to="/components/">YOGA PRIVAT</NavLink>
+            {/* <div
               className={`Nav--Group ${
                 this.state.activeSubNav === 'posts' ? 'active' : ''
               }`}
@@ -66,7 +66,7 @@ export class Navigation extends Component {
                 }`}
                 onClick={() => this.toggleSubNav('posts')}
               >
-                Blog
+                ONLINE STUDIO
               </span>
               <div className="Nav--GroupLinks">
                 <NavLink to="/blog/" className="Nav--GroupLink">
@@ -82,9 +82,9 @@ export class Navigation extends Component {
                   </NavLink>
                 ))}
               </div>
-            </div>
-            <NavLink to="/default/">Default</NavLink>
-            <NavLink to="/contact/">Contact</NavLink>
+            </div> */}
+            <NavLink to="/default/">ONLINE STUDIO</NavLink>
+            <NavLink to="/contact/">OM MIG</NavLink>
           </div>
           <button
             className="Button-blank Nav--MenuButton"

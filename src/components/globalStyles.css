@@ -1,5 +1,23 @@
+@tailwind base;
+
+h1 {
+  @apply text-4xl;
+}
+h2 {
+  @apply font-header text-5xl tracking-wider font-bold text-center uppercase;
+}
+h3 {
+  @apply text-lg;
+}
+a {
+  @apply text-blue-600 underline;
+}
+
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  --primary: #00c2bd;
+  --primary: #b7d4d3;
   --secondary: #000;
   --lightGrey: whitesmoke;
   --midGrey: #cacaca;
@@ -34,13 +52,12 @@ html {
 }
 
 body {
-  font-family: var(--font-system);
+  @apply font-body font-light;
   min-height: 100%;
   position: relative;
   background: white;
   color: var(--secondary);
   font-size: 1.6em;
-  font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;

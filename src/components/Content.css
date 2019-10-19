@@ -22,3 +22,11 @@
   width: 100%;
   height: 100%;
 }
+
+.Content.centered {
+  width: 80%;
+}
+
+.Content.centered h2 {
+  text-align: center;
+}

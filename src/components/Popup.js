@@ -16,13 +16,14 @@ class Popup extends Component {
   }
 
   render() {
+    console.log(this)
     const { children } = this.props
     return (
       <Fragment>
         <div className="taCenter">
           <h3> Simple Popup Example</h3>
-          <div class="Button" onClick={this.togglePopup.bind(this)}>
-            Click To Launch Popup
+          <div className="Button" onClick={this.togglePopup.bind(this)}>
+            { this.props.btnText }
           </div>
         </div>
 
@@ -42,4 +43,5 @@ class Popup extends Component {
     )
   }
 }
+
 export default Popup

@@ -8,6 +8,9 @@ import Accordion from '../components/Accordion'
 import BackgroundVideo from '../components/BackgroundVideo'
 import Gallery from '../components/Gallery'
 import Popup from '../components/Popup'
+import FormSimple from '../components/FormSimple'
+
+//import Image from '../components/Image'
 
 // Export Template for use in CMS preview
 export const ComponentsPageTemplate = ({
@@ -31,7 +34,14 @@ export const ComponentsPageTemplate = ({
     />
     <section className="section">
       <div className="container">
-        <Content source={section1} />
+        <Content source={section1} className={'bg-red-400 relativ max-w-5xl mx-auto'} />
+      </div>
+    </section>
+
+    <section className="section">
+      <div className="container flex -mx-2 mb-8">
+        <img className="object-contain w-1/2 px-2" alt="" src="https://ucarecdn.com/3adac79d-9671-4dc5-a863-fb16e0c2f231/"/>
+        <Content source={section1} className={'w-1/2 px-2'} />
       </div>
     </section>
 
@@ -62,8 +72,9 @@ export const ComponentsPageTemplate = ({
 
     <section className="section">
       <div className="container">
-        <Popup>
-          <Content source={section1} />
+        <Popup btnText="Hej Max">
+          {/* <Content source={section1} /> */}
+          <FormSimple name="Simple Form" />
         </Popup>
       </div>
     </section>
