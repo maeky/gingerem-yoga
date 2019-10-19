@@ -34,7 +34,7 @@ class Popup extends Component {
               onClick={this.togglePopup.bind(this)}
             ></div>
             <div className="Popup-Inner">
-              <X class="Popup-Close" onClick={this.togglePopup.bind(this)} />
+              <X className="Popup-Close" onClick={this.togglePopup.bind(this)} />
               {children}
             </div>
           </div>

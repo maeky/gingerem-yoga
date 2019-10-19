@@ -11,10 +11,11 @@ export default ({
     className='Form'
     name={name}
     action={action}
-    data-netlify=''
+    method="POST"
+    data-netlify='true'
     data-netlify-honeypot='_gotcha'
   >
-    <label className='Form--Label'>
+    <label className='Form--Label Form--InputText'>
       <input
         className='Form--Input'
         type='text'
