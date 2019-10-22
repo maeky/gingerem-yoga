@@ -15,6 +15,8 @@ export default ({
     data-netlify="true"
     data-netlify-honeypot="bot-field"
   >
+    <input type="hidden" name="form-name" value={name} />
+    <input type="hidden" name="bot-field" />
     <label className="Form--Label Form--InputText">
       <input
         className="Form--Input"
@@ -57,10 +59,8 @@ export default ({
         required
       />
     </label>
-    <input type="hidden" name="bot-field" />
     {/* <input type="text" name="_gotcha" style={{ display: "none" }} /> */}
     {!!subject && <input type="hidden" name="subject" value={subject} />}
-    <input type="hidden" name="form-name" value={name} />
     <input
       className="Button Form--SubmitButton"
       type="submit"
