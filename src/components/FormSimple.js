@@ -5,7 +5,7 @@ import "./Form.css"
 export default ({
   name = "Simple Form",
   subject = "", // optional subject of the notification email
-  action = "#"
+  action = ""
 }) => (
   <form
     className="Form"
@@ -13,7 +13,7 @@ export default ({
     action={action}
     method="POST"
     data-netlify="true"
-    data-netlify-honeypot="bot-field"
+    netlify-honeypot="bot-field"
   >
     <input type="hidden" name="form-name" value={name} />
     <input type="hidden" name="bot-field" />
