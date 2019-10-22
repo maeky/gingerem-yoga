@@ -4,6 +4,11 @@ import { stringify } from 'qs'
 import './Form.css'
 import './FormControlled.css'
 
+
+if (typeof window === 'undefined') {
+  global.window = {}
+}
+
 const fetch = window.fetch
 
 class Form extends Component {
