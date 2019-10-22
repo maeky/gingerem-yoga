@@ -8,7 +8,7 @@ import Accordion from '../components/Accordion'
 import BackgroundVideo from '../components/BackgroundVideo'
 import Gallery from '../components/Gallery'
 import Popup from '../components/Popup'
-import FormSimple from '../components/FormSimple'
+import FormControlled from '../components/FormControlled'
 
 //import Image from '../components/Image'
 
@@ -74,7 +74,7 @@ export const ComponentsPageTemplate = ({
       <div className="container">
         <Popup btnText="Hej Max">
           {/* <Content source={section1} /> */}
-          <FormSimple name="Simple Form" />
+          <FormControlled name="Mail form" />
         </Popup>
       </div>
     </section>
