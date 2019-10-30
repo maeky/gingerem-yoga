@@ -8,7 +8,7 @@ import Accordion from '../components/Accordion'
 import BackgroundVideo from '../components/BackgroundVideo'
 import Gallery from '../components/Gallery'
 import Popup from '../components/Popup'
-import FormControlled from '../components/FormControlled'
+import FormSimple from '../components/FormSimple'
 
 //import Image from '../components/Image'
 
@@ -73,64 +73,7 @@ export const ComponentsPageTemplate = ({
     <section className="section">
       <div className="container">
         <Popup btnText="Hej Max">
-          <form
-            className="Form"
-            name="Mail form"
-            action=""
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-          >
-            <input type="hidden" name="form-name" value="Mail form" />
-            <input type="hidden" name="bot-field" />
-            <label className="Form--Label Form--InputText">
-              <input
-                className="Form--Input"
-                type="text"
-                placeholder="Name"
-                name="name"
-                required
-              />
-            </label>
-            <label className="Form--Label">
-              <input
-                className="Form--Input"
-                type="email"
-                placeholder="Email"
-                name="email"
-                required
-              />
-            </label>
-            <label className="Form--Label has-arrow">
-              <select
-                className="Form--Input Form--Select"
-                name="type"
-                defaultValue="Type of Enquiry"
-                required
-              >
-                <option disabled hidden>
-                  Type of Enquiry
-                </option>
-                <option>Need to know more</option>
-                <option>Found a bug</option>
-                <option>Want to say hello</option>
-              </select>
-            </label>
-            <label className="Form--Label">
-              <textarea
-                className="Form--Input Form--Textarea"
-                placeholder="Message"
-                name="message"
-                rows="10"
-                required
-              />
-            </label>
-            <input
-              className="Button Form--SubmitButton"
-              type="submit"
-              value="Enquire"
-            />
-          </form>
+          <FormSimple name="Mail form" />
         </Popup>
       </div>
     </section>

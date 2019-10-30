@@ -11,12 +11,12 @@ export default ({
     className="Form"
     name={name}
     action={action}
-    method="POST"
+    method="post"
     data-netlify="true"
-    netlify-honeypot="bot-field"
+    data-netlify-honeypot="bot-field"
   >
-    <input type="hidden" name="form-name" value={name} />
     <input type="hidden" name="bot-field" />
+    <input type="hidden" name="form-name" value={name} />
     <label className="Form--Label Form--InputText">
       <input
         className="Form--Input"
