@@ -73,7 +73,9 @@ export const ComponentsPageTemplate = ({
     <section className="section">
       <div className="container">
         <Popup btnText="Hej Max">
-          <FormSimple name="Mail form" />
+          <div>
+            <FormSimple name="Mail form" />
+          </div>
         </Popup>
       </div>
     </section>
