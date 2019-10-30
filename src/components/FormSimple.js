@@ -35,21 +35,6 @@ export default ({
         required
       />
     </label>
-    <label className="Form--Label has-arrow">
-      <select
-        className="Form--Input Form--Select"
-        name="type"
-        defaultValue="Type of Enquiry"
-        required
-      >
-        <option disabled hidden>
-          Type of Enquiry
-        </option>
-        <option>Need to know more</option>
-        <option>Found a bug</option>
-        <option>Want to say hello</option>
-      </select>
-    </label>
     <label className="Form--Label">
       <textarea
         className="Form--Input Form--Textarea"
