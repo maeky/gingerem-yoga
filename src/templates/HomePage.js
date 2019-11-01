@@ -17,7 +17,9 @@ export const HomePageTemplate = ({
   section5,
   section6,
   section7,
-  section8, 
+  section8,
+  section9,
+  section10,
 }) => (
   <main className="Home">
     <PageHeader
@@ -31,31 +33,31 @@ export const HomePageTemplate = ({
       <div className="container">
         <Content source={section1} className={"max-w-5xl relativ mx-auto"} />
         <div className="pt-12 flex justify-center">
-          <button class="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+          <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
             Jag vill vara med!
           </button>
         </div>
       </div>
     </section>
 
-    <div className="pb-16">
-    <section className="section bg-snow-white">
-      <div className="container">
-        <Content source={section2} className={"max-w-5xl relativ mx-auto"} />
-        <div className="pt-12 flex justify-center">
-          <button class="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
-            Yoga online >
-          </button>
+    <div className="pb-16 mb-8">
+      <section className="section bg-snow-white">
+        <div className="container">
+          <Content source={section2} className={"max-w-5xl relativ mx-auto"} />
+          <div className="pt-12 flex justify-center">
+            <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+              Yoga online >
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </div>
 
     <section className="section bg-gray-green">
       <div className="container">
         <Content source={section3} className={"text-5xl max-w-5xl relativ mx-auto"} />
         <div className="pt-12 flex justify-center">
-          <button class="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
+          <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
             Gå med
           </button>
         </div>
@@ -63,7 +65,7 @@ export const HomePageTemplate = ({
     </section>
 
     <section className="section">
-      <div className="container flex -mx-2 mb-8">
+      <div className="container flex mx-2 mb-8">
         <div className="mx-32 w-2/5 px-2">
           <img className="object-cover rounded-full" alt="Bild på Emilie" src="images/emilie.jpg"/>
         </div> 
@@ -71,48 +73,79 @@ export const HomePageTemplate = ({
       </div>
     </section>
 
-    <div className="pb-16 flex -mx-2 mb-8">
-    <section className="section bg-snow-white">
-      <div className="container w-1/2 px-2">
-        <Content source={section5} className={'max-w-lg relativ mx-auto'} />
-        <div className="pt-12 flex justify-center">
-          <button class="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
-            Berätta mer >
-          </button>
+    <div className="pb-16 flex mx-2 mb-8">
+      <section className="section bg-snow-white">
+        <div className="container w-1/2 px-2">
+          <Content source={section5} className={'max-w-lg relativ mx-auto'} />
+          <div className="pt-12 flex justify-center">
+            <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+              Berätta mer >
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
-    <img className="bg-snow-white object-cover w-1/2 px-2" alt="Instruktions bild" src="images/IMG_1359.jpg"/>
+      </section>
+      <img className="bg-snow-white object-cover w-1/2" alt="Instruktions bild" src="images/IMG_1359.jpg"/>
     </div>
 
-    <section className="section bg-gray-green">
-      <div className="container">
-        <Content source={section6} className={"text-5xl max-w-5xl relativ mx-auto"} />
-        <div className="pt-12 flex justify-center">
-          <button class="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
-           Registrera mig
-          </button>
+    <div className="pb-16 mb-8">
+      <section className="section bg-gray-green">
+        <div className="container">
+          <Content source={section6} className={"text-5xl max-w-5xl relativ mx-auto"} />
+          <div className="pt-12 flex justify-center">
+            <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
+              Gå med
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
+
+    <div className="flex mx-2 mb-8">
+      <img className="bg-snow-white object-cover w-1/2" alt="Instruktions bild" src="images/IMG_1359.jpg"/>
+      <section className="section bg-snow-white">
+        <div className="container w-1/2 px-2">
+          <Content source={section7} className={'max-w-lg relativ mx-auto'} />
+          <div className="pt-12 flex justify-center">
+            <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+              Berätta mer >
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
 
     <section className="section">
-      <div className="container flex -mx-2 mb-8">
-        <img className="object-contain w-1/2 px-2" alt="Vayumudra logo" src="images/Vayumudra_logo_Black_600x.png"/>
-        <Content source={section7} className={"w-1/2 px-2"}/>
+      <div className="container flex mx-2 mb-8">
+        <img className="object-contain w-1/2" alt="Vayumudra logo" src="images/Vayumudra_logo_Black_600x.png"/>
+        <Content source={section8} className={"w-1/2 px-2"}/>
       </div>
     </section>
 
     <section className="section bg-snow-white">
       <div className="container">
-        <Content source={section8} className={"max-w-5xl relativ mx-auto"} />
+        <Content source={section9} className={"max-w-5xl relativ mx-auto"} />
         <div className="pt-12 flex justify-center">
-          <button class="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+          <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
             Berätta mer >
           </button>
         </div>
       </div>
     </section>
+
+    <div className="pb-16 flex mx-2 mb-8">
+      <section className="section bg-gray-green">
+        <div className="container w-1/2 px-2">
+          <Content source={section10} className={'max-w-lg relativ mx-auto'} />
+          <div className="pt-12 flex justify-center">
+          <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
+              Kontakta Emilie
+            </button>
+          </div>
+        </div>
+      </section>
+      <img className="bg-snow-white object-cover w-1/2" alt="Yogaklass bild" src="images/yoga_class.jpg"/>
+    </div>
+
   </main>
 )
 
@@ -146,6 +179,8 @@ export const pageQuery = graphql`
         section6
         section7
         section8 
+        section9
+        section10 
       }
     }
   }

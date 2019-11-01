@@ -10,7 +10,7 @@
 .Nav--Container {
   display: flex;
   align-items: center;
-  height: 6rem;
+  height: 8rem;
 }
 
 .Nav--Links {
@@ -19,6 +19,7 @@
   justify-content: center;
   flex-direction: row;
   margin-left: auto;
+  margin-right: auto;
 }
 
 .Nav--Links > * + * {

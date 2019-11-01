@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Location } from '@reach/router'
 import { Link } from 'gatsby'
 import { Menu, X } from 'react-feather'
-//import Logo from './Logo'
+import Logo from './Logo'
 
 import './Nav.css'
 
@@ -49,8 +49,9 @@ export class Navigation extends Component {
             <Logo />
           </Link> */}
           <div className="Nav--Links">
-            <NavLink to="/">STRONG YOGI STUDIO</NavLink>
-            <NavLink to="/components/">YOGA PRIVAT</NavLink>
+            <NavLink className="text-xl" to="/">STRONG YOGI STUDIO</NavLink>
+            <NavLink className="text-xl" to="/components/">YOGA PRIVAT</NavLink>
+            <Logo />
             {/* <div
               className={`Nav--Group ${
                 this.state.activeSubNav === 'posts' ? 'active' : ''
@@ -83,8 +84,8 @@ export class Navigation extends Component {
                 ))}
               </div>
             </div> */}
-            <NavLink to="/default/">ONLINE STUDIO</NavLink>
-            <NavLink to="/contact/">OM MIG</NavLink>
+            <NavLink className="text-xl" to="/default/">ONLINE STUDIO</NavLink>
+            <NavLink className="text-xl" to="/contact/">OM MIG</NavLink>
           </div>
           <button
             className="Button-blank Nav--MenuButton"
