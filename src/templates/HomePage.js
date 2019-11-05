@@ -121,16 +121,18 @@ export const HomePageTemplate = ({
       </div>
     </section>
 
-    <section className="section bg-snow-white">
-      <div className="container">
-        <Content source={section9} className={"max-w-5xl relativ mx-auto"} />
-        <div className="pt-12 flex justify-center">
-          <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
-            Berätta mer >
-          </button>
+    <div className="pb-16">
+      <section className="section bg-snow-white">
+        <div className="container">
+          <Content source={section9} className={"max-w-5xl relativ mx-auto"} />
+          <div className="pt-12 flex justify-center">
+            <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+              Berätta mer >
+            </button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </div>
 
     <div className="pb-16 flex mx-2 mb-8">
       <section className="section bg-gray-green">
