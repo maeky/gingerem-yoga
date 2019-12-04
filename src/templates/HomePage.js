@@ -6,10 +6,10 @@ import Content from '../components/Content'
 import Layout from '../components/Layout'
 
 // Export Template for use in CMS preview
-export const HomePageTemplate = ({ 
-  title, 
-  subtitle, 
-  featuredImage, 
+export const HomePageTemplate = ({
+  title,
+  subtitle,
+  featuredImage,
   section1,
   section2,
   section3,
@@ -19,7 +19,7 @@ export const HomePageTemplate = ({
   section7,
   section8,
   section9,
-  section10,
+  section10
 }) => (
   <main className="Home">
     <PageHeader
@@ -31,7 +31,7 @@ export const HomePageTemplate = ({
 
     <section className="section">
       <div className="container">
-        <Content source={section1} className={"max-w-5xl relativ mx-auto"} />
+        <Content source={section1} className={'max-w-5xl relativ mx-auto'} />
         <div className="pt-12 flex justify-center">
           <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
             Jag vill vara med!
@@ -40,22 +40,23 @@ export const HomePageTemplate = ({
       </div>
     </section>
 
-    <div className="pb-16 mb-8">
-      <section className="section bg-snow-white">
-        <div className="container">
-          <Content source={section2} className={"max-w-5xl relativ mx-auto"} />
-          <div className="pt-12 flex justify-center">
-            <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
-              Yoga online >
-            </button>
-          </div>
-        </div>
-      </section>
-    </div>
-
-    <section className="section bg-gray-green">
+    <section className="section bg-snow-white pb-16 mb-16">
       <div className="container">
-        <Content source={section3} className={"text-5xl max-w-5xl relativ mx-auto"} />
+        <Content source={section2} className={'max-w-5xl relativ mx-auto'} />
+        <div className="pt-12 flex justify-center">
+          <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+            Yoga online >
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section className="section bg-gray-green pb-16 mb-16">
+      <div className="container">
+        <Content
+          source={section3}
+          className={'text-5xl max-w-5xl relativ mx-auto'}
+        />
         <div className="pt-12 flex justify-center">
           <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
             Gå med
@@ -64,19 +65,39 @@ export const HomePageTemplate = ({
       </div>
     </section>
 
-    <section className="section">
-      <div className="container flex mx-2 mb-8">
+    {/* <section className="section pb-16">
+      <div className="container flex mx-2">
         <div className="mx-32 w-2/5 px-2">
-          <img className="object-cover rounded-full" alt="Bild på Emilie" src="images/emilie.jpg"/>
-        </div> 
-        <Content source={section4} className={"w-3/5 px-2"} />
+          <img
+            className="object-cover rounded-full"
+            alt="Bild på Emilie"
+            src="images/emilie.jpg"
+          />
+        </div>
+        <Content source={section4} className={'w-3/5 px-2'} />
+      </div>
+    </section> */}
+
+    <section className="section sm:flex sm:justify-center pb-16">
+      <div className="container sm:flex sm:mx-2">
+        <div className="pb-16 sm:mx-8 sm:w-1/2 sm:px-2 md:mx-16 lg:mx-32">
+          <img
+            className="object-cover rounded-full"
+            alt="Bild på Emilie"
+            src="images/emilie.jpg"
+          />
+        </div>
+        <Content
+          source={section4}
+          className={'sm:w-1/2 sm:px-2sm:mx-8 md:mx-16 lg:mx-32'}
+        />
       </div>
     </section>
 
-    <div className="pb-16 flex mx-2 mb-8">
+    <div className="pb-16 flex mb-8">
       <section className="section bg-snow-white">
         <div className="container w-1/2 px-2">
-          <Content source={section5} className={'max-w-lg relativ mx-auto'} />
+          <Content source={section5} className={''} />
           <div className="pt-12 flex justify-center">
             <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
               Berätta mer >
@@ -84,27 +105,36 @@ export const HomePageTemplate = ({
           </div>
         </div>
       </section>
-      <img className="bg-snow-white object-cover w-1/2" alt="Instruktions bild" src="images/IMG_1359.jpg"/>
+      <img
+        className="bg-snow-white object-cover w-1/2"
+        alt="Instruktions bild"
+        src="images/IMG_1359.jpg"
+      />
     </div>
 
-    <div className="pb-16 mb-8">
-      <section className="section bg-gray-green">
-        <div className="container">
-          <Content source={section6} className={"text-5xl max-w-5xl relativ mx-auto"} />
-          <div className="pt-12 flex justify-center">
-            <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
-              Gå med
-            </button>
-          </div>
+    <section className="section bg-gray-green pb-16 mb-16">
+      <div className="container">
+        <Content
+          source={section6}
+          className={'text-5xl max-w-5xl relativ mx-auto'}
+        />
+        <div className="pt-12 flex justify-center">
+          <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
+            Gå med
+          </button>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <div className="flex mx-2 mb-8">
-      <img className="bg-snow-white object-cover w-1/2" alt="Instruktions bild" src="images/IMG_1359.jpg"/>
+    <div className="flex mb-16">
+      <img
+        className="bg-snow-white object-cover w-1/2"
+        alt="Instruktions bild"
+        src="images/IMG_1359.jpg"
+      />
       <section className="section bg-snow-white">
         <div className="container w-1/2 px-2">
-          <Content source={section7} className={'max-w-lg relativ mx-auto'} />
+          <Content source={section7} className={''} />
           <div className="pt-12 flex justify-center">
             <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
               Berätta mer >
@@ -116,38 +146,43 @@ export const HomePageTemplate = ({
 
     <section className="section">
       <div className="container flex mx-2 mb-8">
-        <img className="object-contain w-1/2" alt="Vayumudra logo" src="images/Vayumudra_logo_Black_600x.png"/>
-        <Content source={section8} className={"w-1/2 px-2"}/>
+        <img
+          className="object-contain w-1/2"
+          alt="Vayumudra logo"
+          src="images/Vayumudra_logo_Black_600x.png"
+        />
+        <Content source={section8} className={'w-1/2 px-2'} />
       </div>
     </section>
 
-    <div className="pb-16">
-      <section className="section bg-snow-white">
-        <div className="container">
-          <Content source={section9} className={"max-w-5xl relativ mx-auto"} />
-          <div className="pt-12 flex justify-center">
-            <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
-              Berätta mer >
-            </button>
-          </div>
+    <section className="section bg-snow-white pb-16">
+      <div className="container">
+        <Content source={section9} className={'max-w-5xl relativ mx-auto'} />
+        <div className="pt-12 flex justify-center">
+          <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+            Berätta mer >
+          </button>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
 
-    <div className="pb-16 flex mx-2 mb-8">
-      <section className="section bg-gray-green">
-        <div className="container w-1/2 px-2">
-          <Content source={section10} className={'max-w-lg relativ mx-auto'} />
-          <div className="pt-12 flex justify-center">
-          <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
+    <div className="pb-16 flex mb-16">
+      <section className="section bg-gray-green flex">
+        <div className="container w-1/2 px-2 flex flex-col">
+          <Content source={section10} className={'mb-auto'} />
+          <div className="flex justify-center">
+            <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
               Kontakta Emilie
             </button>
           </div>
         </div>
       </section>
-      <img className="bg-snow-white object-cover w-1/2" alt="Yogaklass bild" src="images/yoga_class.jpg"/>
+      <img
+        className="bg-snow-white object-cover w-1/2"
+        alt="Yogaklass bild"
+        src="images/yoga_class.jpg"
+      />
     </div>
-
   </main>
 )
 
@@ -180,9 +215,9 @@ export const pageQuery = graphql`
         section5
         section6
         section7
-        section8 
+        section8
         section9
-        section10 
+        section10
       }
     }
   }

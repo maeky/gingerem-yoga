@@ -2,7 +2,7 @@
 template: PrivatePage
 slug: private
 title: Yoga Privat
-featuredImage: 'images/IMG_1347.jpg'
+featuredImage: /images/IMG_1347.jpg
 subtitle: 'Information om privat yoga klasser'
 section1: >-
   <h2 class="text-center">du är värd privatyoga</h2>

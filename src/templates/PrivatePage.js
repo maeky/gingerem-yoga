@@ -18,7 +18,7 @@ export const PrivatePageTemplate = ({
   section6,
   section7,
 }) => (
-  <main className="Home">
+  <main className="Private">
     <PageHeader
       large
       title={title}
@@ -117,7 +117,7 @@ const PrivatePage = ({ data: { page } }) => (
 export default PrivatePage
 
 export const pageQuery = graphql`
-  ## Query for HomePage data
+  ## Query for PrivatePage data
   ## Use GraphiQL interface (http://localhost:8000/___graphql)
   ## $id is processed via gatsby-node.js
   ## query name must be unique to this file
