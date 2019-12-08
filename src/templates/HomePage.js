@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
 import Layout from '../components/Layout'
+import Img from 'gatsby-image'
 
 // Export Template for use in CMS preview
 export const HomePageTemplate = ({
@@ -19,7 +20,11 @@ export const HomePageTemplate = ({
   section7,
   section8,
   section9,
-  section10
+  section10,
+  emilie,
+  privatyoga,
+  designyoga,
+  yogaclass
 }) => (
   <main className="Home">
     <PageHeader
@@ -67,11 +72,11 @@ export const HomePageTemplate = ({
 
     <section className="section sm:flex sm:justify-center pb-16">
       <div className="container sm:flex sm:mx-2">
-        <div className="pb-16 sm:mr-8 sm:w-1/2 sm:px-2">
-          <img
-            className="object-cover rounded-full"
+        <div className="pb-16 sm:w-1/2 sm:px-2">
+          <Img
+            className="justify-center w-2/3 mx-auto object-cover rounded-full"
             alt="Bild på Emilie"
-            src="images/emilie.jpg"
+            fluid={emilie.childImageSharp.fluid}
           />
         </div>
         <Content source={section4} className={'sm:w-1/2 sm:ml-8 sm:px-2'} />
@@ -89,10 +94,10 @@ export const HomePageTemplate = ({
           </div>
         </div>
       </section>
-      <img
+      <Img
         className="bg-snow-white object-cover sm:w-1/2"
         alt="Instruktions bild"
-        src="images/IMG_1359.jpg"
+        fluid={privatyoga.childImageSharp.fluid}
       />
     </div>
 
@@ -111,10 +116,10 @@ export const HomePageTemplate = ({
     </section>
 
     <div className="mb-16 flex flex-col mb-8 sm:flex-row">
-      <img
+      <Img
         className="bg-snow-white object-cover sm:w-1/2"
-        alt="Instruktions bild"
-        src="images/IMG_1359.jpg"
+        alt="Foto och grafisk design bild"
+        fluid={designyoga.childImageSharp.fluid}
       />
       <section className="section flex sm:w-1/2 bg-snow-white">
         <div className="container flex flex-col sm:w-2/3 px-2">
@@ -161,19 +166,29 @@ export const HomePageTemplate = ({
           </div>
         </div>
       </section>
-      <img
+      <Img
         className="bg-snow-white object-cover sm:w-1/2"
         alt="Yogaklass bild"
-        src="images/yoga_class.jpg"
+        fluid={yogaclass.childImageSharp.fluid}
       />
     </div>
   </main>
 )
 
 // Export Default HomePage for front-end
-const HomePage = ({ data: { page } }) => (
+const HomePage = ({
+  data: { page, emilie, privatyoga, designyoga, yogaclass }
+}) => (
   <Layout meta={page.frontmatter.meta || false}>
-    <HomePageTemplate {...page} {...page.frontmatter} body={page.html} />
+    <HomePageTemplate
+      {...page}
+      {...page.frontmatter}
+      body={page.html}
+      emilie={emilie}
+      privatyoga={privatyoga}
+      designyoga={designyoga}
+      yogaclass={yogaclass}
+    />
   </Layout>
 )
 
@@ -202,6 +217,34 @@ export const pageQuery = graphql`
         section8
         section9
         section10
+      }
+    }
+    emilie: file(relativePath: { eq: "emilie.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    privatyoga: file(relativePath: { eq: "IMG_1359.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    designyoga: file(relativePath: { eq: "IMG_1359.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 600) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    yogaclass: file(relativePath: { eq: "yoga_class.jpg" }) {
+      childImageSharp {
+        fluid(maxHeight: 600) {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
   }

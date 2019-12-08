@@ -27,6 +27,13 @@ export default () => (
           @gingerem_yoga
         </a>
         <br />
+        <a
+          className="text-white no-underline"
+          href="https://www.instagram.com/strongyogistudio/"
+        >
+          @strongyogistudio
+        </a>
+        <br />
         <address className="pb-16">Floragatan 7, Svedala</address>
         <span>
           © Copyright {new Date().getFullYear()} All rights reserved. Crafted by{' '}
