@@ -6,6 +6,10 @@ import Content from '../components/Content'
 import Layout from '../components/Layout'
 import Img from 'gatsby-image'
 
+function handleClick(e) {
+  e.preventDefault()
+}
+
 // Export Template for use in CMS preview
 export const HomePageTemplate = ({
   title,
@@ -38,9 +42,12 @@ export const HomePageTemplate = ({
       <div className="container">
         <Content source={section1} className={'max-w-5xl relativ mx-auto'} />
         <div className="pt-12 flex justify-center">
-          <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+          <a
+            href="https://www.facebook.com/strongyogistudio"
+            className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase no-underline"
+          >
             Jag vill vara med!
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -63,9 +70,12 @@ export const HomePageTemplate = ({
           className={'text-5xl max-w-5xl relativ mx-auto'}
         />
         <div className="pt-12 flex justify-center">
-          <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
+          <a
+            href="https://www.facebook.com/groups/960622964295874"
+            className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase no-underline"
+          >
             Gå med
-          </button>
+          </a>
         </div>
       </div>
     </section>

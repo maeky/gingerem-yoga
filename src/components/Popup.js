@@ -16,14 +16,18 @@ class Popup extends Component {
   }
 
   render() {
-    console.log(this)
     const { children } = this.props
     return (
       <Fragment>
         <div className="taCenter">
           <h3> Simple Popup Example</h3>
-          <div className="Button" onClick={this.togglePopup.bind(this)}>
-            { this.props.btnText }
+          <div>
+            <button
+              className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase"
+              onClick={this.togglePopup.bind(this)}
+            >
+              {this.props.btnText}
+            </button>
           </div>
         </div>
 
@@ -32,9 +36,12 @@ class Popup extends Component {
             <div
               className="Popup-Background"
               onClick={this.togglePopup.bind(this)}
-            ></div>
-            <div className="Popup-Inner">
-              <X className="Popup-Close" onClick={this.togglePopup.bind(this)} />
+            />
+            <div className="sm:max-w-xs z-40 bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+              <X
+                className="Popup-Close"
+                onClick={this.togglePopup.bind(this)}
+              />
               {children}
             </div>
           </div>
