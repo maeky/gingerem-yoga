@@ -19,7 +19,7 @@ class Modal extends Component {
     const { children } = this.props
     const { open } = this.state
     return (
-      <div>
+      <Fragment>
         <button
           className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase"
           onClick={this.onOpenModal}
@@ -31,8 +31,9 @@ class Modal extends Component {
           onClose={this.onCloseModal}
           center
           children={children}
+          showCloseIcon={false}
         />
-      </div>
+      </Fragment>
     )
   }
 }

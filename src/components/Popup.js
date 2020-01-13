@@ -37,7 +37,7 @@ class Popup extends Component {
               className="Popup-Background"
               onClick={this.togglePopup.bind(this)}
             />
-            <div className="Popup-Inner">
+            <div className="bg-white rounded-lg md:max-w-md md:mx-auto p-4 fixed inset-x-0 bottom-0 z-50 mb-4 mx-4 md:relative">
               <X
                 className="Popup-Close"
                 onClick={this.togglePopup.bind(this)}
