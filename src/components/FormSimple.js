@@ -1,41 +1,97 @@
 import React from 'react'
-import MailerLite from 'mailerlite-api-v2-node'
+
+if (typeof window === 'undefined') {
+  global.window = {}
+}
+
+const fetch = window.fetch
 
 class SimpleForm extends React.Component {
-  constructor(props) {
-    super(props);
-    this.mailerLite = MailerLite('f8e58030de7d0746840b81dd1672435d');
-   }
+  static defaultProps = {
+    name: 'Simple Form'
+  }
 
-  // with async await
-  async getAccountEmail() {
-    const { email } = await this.mailerLite.getAccount()
-    return email
+  initialState = {
+    name: '',
+    email: '',
+    message: '',
+    subject: `New Submission from ${this.props.siteTitle}!`,
+    _gotcha: '',
+    disabled: false,
+    alert: '',
+    action: '',
+    'form-name': this.props.name
+  }
+
+  state = {
+    ...this.initialState
+  }
+
+  form = null
+  inputs = []
+
+  componentDidMount () {
+    if (!this.form) return
+    this.inputs = [...this.form.querySelectorAll('input, textarea')]
+    this.addListeners()
+  }
+
+  addListeners = () => {
+    this.inputs.forEach(input => {
+      input.addEventListener('invalid', () => {
+        input.dataset.touched = true
+      })
+      input.addEventListener('blur', () => {
+        if (input.value !== '') input.dataset.touched = true
+      })
+    })
+  }
+
+  resetForm = customState => {
+    this.setState({ ...this.initialState, ...customState })
+    this.inputs.forEach(input => {
+      delete input.dataset.touched
+    })
+  }
+
+  handleChange = e =>
+  this.setState({
+    [e.target.name]: e.target.value
+  })
+
+  handleSubmit = e => {
+    const data = JSON.stringify({"name": this.state.name,"email": this.state.email})
+    console.log(data)
+    fetch("../../netlify-lambda/mailerlite_subscribe", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: data
+    })
+    .then(response => {
+      console.log(response)
+      this.resetForm({
+        alert: 'Thanks for your enquiry, we will get back to you soon.'
+      })
+    })
+    .catch(error => alert(error))
+
+    e.preventDefault();
   }
 
   render() {
-    let { name, subject, action } = this.props
-
-    name = 'Simple Form'
-    subject = '' // optional subject of the notification email
-    action = ''
-
-    // with Promises
-    this.mailerLite.getAccount().then((account) => {
-      console.log(account)
-    })
 
     return (
       <form
         className=""
-        name={name}
-        action={action}
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
+        name={this.state['form-name']}
+        ref={form => {
+          this.form = form
+        }}
+        action={this.state.action}
+        onSubmit={this.handleSubmit}
       >
-        <input type="hidden" name="bot-field" />
-        <input type="hidden" name="form-name" value={name} />
         <div className="mb-4">
           <label className="block text-gray-700 text-2xl font-bold mb-2">
             <input
@@ -43,6 +99,8 @@ class SimpleForm extends React.Component {
               type="text"
               placeholder="Förnamn"
               name="name"
+              value={this.state.name}
+              onChange={this.handleChange}
               required
             />
           </label>
@@ -54,11 +112,11 @@ class SimpleForm extends React.Component {
               type="email"
               placeholder="Email"
               name="email"
+              value={this.state.email}
+              onChange={this.handleChange}
               required
             />
           </label>
-          {/* <input type="text" name="_gotcha" style={{ display: "none" }} /> */}
-          {!!subject && <input type="hidden" name="subject" value={subject} />}
           <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enquire" />
         </div>
       </form>
