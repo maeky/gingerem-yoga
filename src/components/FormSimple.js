@@ -62,7 +62,7 @@ class SimpleForm extends React.Component {
   handleSubmit = e => {
     const data = JSON.stringify({"name": this.state.name,"email": this.state.email})
     console.log(data)
-    fetch("../../netlify-lambda/mailerlite_subscribe", {
+    fetch("../../.netlify/functions/mailerlite_subscribe", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

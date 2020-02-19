@@ -76,6 +76,5 @@
   "devDependencies": {
     "del-cli": "^2.0.0",
     "prettier": "^1.16.1"
-  },
-  "proxy": "http://localhost:9000/"
+  }
 }
