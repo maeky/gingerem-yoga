@@ -20,10 +20,9 @@ class Popup extends Component {
     return (
       <Fragment>
         <div className="taCenter">
-          <h3> Simple Popup Example</h3>
           <div>
             <button
-              className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase"
+              className={this.props.btnClass}
               onClick={this.togglePopup.bind(this)}
             >
               {this.props.btnText}
@@ -37,7 +36,8 @@ class Popup extends Component {
               className="Popup-Background"
               onClick={this.togglePopup.bind(this)}
             />
-            <div className="bg-white rounded-lg md:max-w-md md:mx-auto p-4 fixed inset-x-0 bottom-0 z-50 mb-4 mx-4 md:relative">
+            {/* <div className="bg-white rounded-lg md:max-w-md md:mx-auto p-12 pt-20 fixed inset-x-0 bottom-0 z-50 mb-4 mx-4 md:relative"> */}
+            <div className="bg-white rounded-lg sm:max-w-3xl sm:mx-auto p-12 pt-20 fixed inset-x-0 bottom-0 z-50 mb-4 mx-4 sm:relative">
               <X
                 className="Popup-Close"
                 onClick={this.togglePopup.bind(this)}

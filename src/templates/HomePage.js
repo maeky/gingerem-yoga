@@ -5,6 +5,8 @@ import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
 import Layout from '../components/Layout'
 import Img from 'gatsby-image'
+import Popup from '../components/Popup'
+import FormSimple from '../components/FormSimple'
 
 function handleClick(e) {
   e.preventDefault()
@@ -118,9 +120,12 @@ export const HomePageTemplate = ({
           className={'text-5xl max-w-5xl relativ mx-auto'}
         />
         <div className="pt-12 flex justify-center">
-          <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
-            Gå med
-          </button>
+          <Popup
+            btnText="Hej Max"
+            btnClass="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase"
+          >
+            <FormSimple name="Mail Form" />
+          </Popup>
         </div>
       </div>
     </section>
