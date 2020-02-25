@@ -136,6 +136,13 @@ module.exports = {
         enableIdentityWidget: true
       }
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+        endpoint:
+          'https://strongyogi.us5.list-manage.com/subscribe/post?u=7090f013d54055a52a859e47c&amp;id=55c205ae0b' // add your MC list endpoint here; see instructions below
+      }
+    },
     'gatsby-plugin-netlify' // make sure to keep it last in the array
   ]
 }

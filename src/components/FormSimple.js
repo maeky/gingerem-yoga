@@ -30,7 +30,7 @@ class SimpleForm extends React.Component {
   form = null
   inputs = []
 
-  componentDidMount () {
+  componentDidMount() {
     if (!this.form) return
     this.inputs = [...this.form.querySelectorAll('input, textarea')]
     this.addListeners()
@@ -55,33 +55,35 @@ class SimpleForm extends React.Component {
   }
 
   handleChange = e =>
-  this.setState({
-    [e.target.name]: e.target.value
-  })
+    this.setState({
+      [e.target.name]: e.target.value
+    })
 
   handleSubmit = e => {
-    const data = JSON.stringify({"name": this.state.name,"email": this.state.email})
+    const data = JSON.stringify({
+      name: this.state.name,
+      email: this.state.email
+    })
     console.log(data)
-    fetch("../../.netlify/functions/mailerlite_subscribe", {
-      method: "POST",
+    fetch('../../.netlify/functions/mailerlite_subscribe', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
       body: data
     })
-    .then(response => {
-      console.log(response)
-      this.resetForm({
-        alert: 'Thanks for your enquiry, we will get back to you soon.'
+      .then(response => {
+        console.log(response)
+        this.resetForm({
+          alert: 'Thanks for your enquiry, we will get back to you soon.'
+        })
       })
-    })
-    .catch(error => alert(error))
+      .catch(error => alert(error))
 
-    e.preventDefault();
+    e.preventDefault()
   }
 
   render() {
-
     return (
       <form
         className=""
@@ -92,6 +94,10 @@ class SimpleForm extends React.Component {
         action={this.state.action}
         onSubmit={this.handleSubmit}
       >
+        <div className="mb-8">
+          I mitt nyhetsmail får du länkar till gratisklasser, goda vegetariska
+          recept och en massa annat kul!
+        </div>
         <div className="mb-4">
           <label className="block text-gray-700 text-2xl font-bold mb-2">
             <input
@@ -117,7 +123,11 @@ class SimpleForm extends React.Component {
               required
             />
           </label>
-          <input className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit" value="Enquire" />
+          <input
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            type="submit"
+            value="Gå med"
+          />
         </div>
       </form>
     )
