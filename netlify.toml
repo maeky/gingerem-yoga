@@ -1,7 +1,13 @@
 [build]
   publish = "public"
-  command = "npm run build"
-  functions = "netlify-lambda"
+  command = "yarn build"
+  functions = "./src/functions"
+
+[dev]
+  functionsPort = 34567
+  port = 8000
+  publish = "./public"
+
 [build.environment]
   YARN_VERSION = "1.3.2"
   YARN_FLAGS = "--no-ignore-optional"
