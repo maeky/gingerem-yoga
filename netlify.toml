@@ -1,7 +1,7 @@
 [build]
   publish = "public"
   command = "yarn build"
-  functions = "./src/functions"
+  functions = "netlify-lambda"
 
 [dev]
   functionsPort = 34567
