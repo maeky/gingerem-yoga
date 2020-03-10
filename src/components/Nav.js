@@ -45,13 +45,21 @@ export class Navigation extends Component {
     return (
       <nav className={`Nav ${active ? 'Nav-active' : ''}`}>
         <div className="Nav--Container container">
-          {/* <Link to="/" onClick={this.handleLinkClick}>
-            <Logo />
-          </Link> */}
+          {/* {
+            <Link to="/" onClick={this.handleLinkClick}>
+              <Logo />
+            </Link>
+          } */}
           <div className="Nav--Links">
-            <NavLink className="text-xl" to="/">STRONG YOGI STUDIO</NavLink>
-            <NavLink className="text-xl" to="/components/">YOGA PRIVAT</NavLink>
-            <Logo />
+            {/* <NavLink className="text-xl" to="/">
+              STRONG YOGI STUDIO
+            </NavLink> */}
+            <NavLink className="text-xl" to="/private/">
+              YOGA PRIVAT
+            </NavLink>
+            <Link to="/" onClick={this.handleLinkClick}>
+              <Logo />
+            </Link>
             {/* <div
               className={`Nav--Group ${
                 this.state.activeSubNav === 'posts' ? 'active' : ''
@@ -84,8 +92,10 @@ export class Navigation extends Component {
                 ))}
               </div>
             </div> */}
-            <NavLink className="text-xl" to="/default/">ONLINE STUDIO</NavLink>
-            <NavLink className="text-xl" to="/contact/">OM MIG</NavLink>
+            {/* <NavLink className="text-xl" to="/default/">ONLINE STUDIO</NavLink> */}
+            <NavLink className="text-xl" to="/contact/">
+              OM MIG
+            </NavLink>
           </div>
           <button
             className="Button-blank Nav--MenuButton"

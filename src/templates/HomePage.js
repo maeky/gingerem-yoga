@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { Link } from 'gatsby'
 
 import PageHeader from '../components/PageHeader'
 import Content from '../components/Content'
@@ -26,11 +27,11 @@ export const HomePageTemplate = ({
   section7,
   section8,
   section9,
-  section10,
-  emilie,
-  privatyoga,
-  designyoga,
-  yogaclass
+  section10
+  // emilie,
+  // privatyoga,
+  // designyoga,
+  // yogaclass
 }) => (
   <main className="Home">
     <PageHeader
@@ -48,7 +49,7 @@ export const HomePageTemplate = ({
             href="https://www.facebook.com/strongyogistudio"
             className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase no-underline"
           >
-            Jag vill vara med!
+            Jag vill vara med! >
           </a>
         </div>
       </div>
@@ -58,9 +59,12 @@ export const HomePageTemplate = ({
       <div className="container">
         <Content source={section2} className={'max-w-5xl relativ mx-auto'} />
         <div className="pt-12 flex justify-center">
-          <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+          <a
+            href="https://www.youtube.com/channel/UCD_YerNV65vOmo9c2n8Jtnw"
+            className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase no-underline"
+          >
             Yoga online >
-          </button>
+          </a>
         </div>
       </div>
     </section>
@@ -100,9 +104,12 @@ export const HomePageTemplate = ({
         <div className="container flex flex-col sm:w-2/3 px-2">
           <Content source={section5} className={'mb-auto'} />
           <div className="pt-12 flex justify-center">
-            <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+            <Link
+              to="/private/"
+              className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase no-underline"
+            >
               Berätta mer >
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -121,10 +128,14 @@ export const HomePageTemplate = ({
         />
         <div className="pt-12 flex justify-center">
           <Popup
-            btnText="Hej Max"
+            btnText="GÅ MED"
             btnClass="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase"
           >
-            <FormSimple name="Mail Form" />
+            <FormSimple
+              name="Mail Form"
+              endpoint="groups/83290436/subscribers"
+              message="I mitt nyhetsmail får du länkar till gratisklasser, goda vegetariska recept och en massa annat kul!"
+            />
           </Popup>
         </div>
       </div>
@@ -140,9 +151,12 @@ export const HomePageTemplate = ({
         <div className="container flex flex-col sm:w-2/3 px-2">
           <Content source={section7} className={'mb-auto'} />
           <div className="pt-12 flex justify-center">
-            <button className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase">
+            <Link
+              to="/about/"
+              className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase no-underline"
+            >
               Berätta mer >
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -159,7 +173,7 @@ export const HomePageTemplate = ({
       </div>
     </section>
 
-    <section className="section bg-snow-white mb-16">
+    {/* <section className="section bg-snow-white mb-16">
       <div className="container">
         <Content source={section9} className={'max-w-5xl relativ mx-auto'} />
         <div className="pt-12 flex justify-center">
@@ -168,16 +182,19 @@ export const HomePageTemplate = ({
           </button>
         </div>
       </div>
-    </section>
+    </section> */}
 
     <div className="pb-16 flex flex-col-reverse mb-8 sm:flex-row">
       <section className="section flex sm:w-1/2 bg-gray-green">
         <div className="container flex flex-col sm:w-2/3 px-2">
           <Content source={section10} className={'mb-auto'} />
           <div className="pt-12 flex justify-center">
-            <button className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase">
+            <a
+              href="mailTo:emilie@strongyogi.se"
+              className="px-16 bg-snow-white hover:bg-white text-gray-green font-bold py-2 px-4 rounded-full uppercase no-underline"
+            >
               Kontakta Emilie
-            </button>
+            </a>
           </div>
         </div>
       </section>
@@ -199,10 +216,10 @@ const HomePage = ({
       {...page}
       {...page.frontmatter}
       body={page.html}
-      emilie={emilie}
-      privatyoga={privatyoga}
-      designyoga={designyoga}
-      yogaclass={yogaclass}
+      // emilie={emilie}
+      // privatyoga={privatyoga}
+      // designyoga={designyoga}
+      // yogaclass={yogaclass}
     />
   </Layout>
 )

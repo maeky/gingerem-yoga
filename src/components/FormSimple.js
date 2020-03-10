@@ -65,13 +65,16 @@ class SimpleForm extends React.Component {
       email: this.state.email
     })
     console.log(data)
-    fetch('../../.netlify/functions/mailerlite_subscribe', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: data
-    })
+    fetch(
+      `../../.netlify/functions/mailerlite?endpoint=${this.props.endpoint}`,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: data
+      }
+    )
       .then(response => {
         console.log(response)
         this.resetForm({
@@ -94,10 +97,7 @@ class SimpleForm extends React.Component {
         action={this.state.action}
         onSubmit={this.handleSubmit}
       >
-        <div className="mb-8">
-          I mitt nyhetsmail får du länkar till gratisklasser, goda vegetariska
-          recept och en massa annat kul!
-        </div>
+        <div className="mb-8">{this.props.message}</div>
         <div className="mb-4">
           <label className="block text-gray-700 text-2xl font-bold mb-2">
             <input
@@ -124,7 +124,7 @@ class SimpleForm extends React.Component {
             />
           </label>
           <input
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="px-16 bg-gray-green hover:bg-sea-green text-white font-bold py-2 px-4 rounded-full uppercase"
             type="submit"
             value="Gå med"
           />
